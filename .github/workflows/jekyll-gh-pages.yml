@@ -24,9 +24,9 @@ jobs:
   # 单次部署的工作描述
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./server/
+    # defaults:
+    #   run:
+    #     working-directory: ./server/
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -35,7 +35,6 @@ jobs:
         with:
           node-version: 14
           cache: 'yarn'
-          cache-dependency-path: './server/yarn.lock'
       - name: Install dependencies
         run: yarn install
       - name: Build
