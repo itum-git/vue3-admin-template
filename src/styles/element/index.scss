@@ -1,0 +1,143 @@
+/* element-plus 正常样式，可对最终生成的 scss 变量自定义（包含 dark.scss） */
+
+$--colors: (
+  "primary": ("base": #2390ff,
+  ),
+  "success": ("base": #00baad,
+  ),
+  "warning": ("base": #f2711c,
+  ),
+  "danger": ("base": #f85734,
+  ),
+  "error": ("base": #db2828,
+  ),
+  "info": ("base": #626aef,
+  ),
+);
+
+$--header: (
+  'height': 50px,
+);
+
+// we can add this to custom namespace, default is 'el'
+@forward "element-plus/theme-chalk/src/mixins/config.scss" with ($namespace: "ep"
+);
+
+// You should use them in scss, because we calculate it by sass.
+// comment next lines to use default color
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+  /* 如果是批量配置，可以在此处覆盖内容变量 */
+  // do not use same name, it will override.
+  $colors: $--colors,
+  $header: $--header,
+  $button-padding-horizontal: ("default": 50px));
+
+// if you want to import all
+// @use "element-plus/theme-chalk/src/index.scss" as *;
+
+/* 引入暗黑模式变量 */
+// custom dark variables
+@use "./dark.scss" as *;
+
+// You can comment it to hide debug info.
+// @debug $--colors;
+
+
+/* element-plus 正常样式覆盖 如果 element 将变量定义在类内部，则需要相应地提升优先级 */
+:root {
+  .ep-header {
+    --ep-header-height: 50px;
+    --ep-header-padding: 0 20px;
+
+    @media screen and (max-width: 768px) {
+      --ep-header-padding: 0 10px;
+    }
+  }
+
+  .ep-menu {
+    --ep-menu-bg-color: transparent;
+  }
+
+  // --ep-color-white: #ffffff;
+  // --ep-color-black: #000000;
+  // --ep-color-primary: #169bd5;
+  // --ep-color-primary-light-3: #5cb9e2;
+  // --ep-color-primary-light-5: #8bcdea;
+  // --ep-color-primary-light-7: #b9e1f2;
+  // --ep-color-primary-light-8: #d0ebf7;
+  // --ep-color-primary-light-9: #e8f5fb;
+  // --ep-color-primary-dark-2: #127caa;
+  // --ep-color-success: #21ba45;
+  // --ep-color-success-light-3: #64cf7d;
+  // --ep-color-success-light-5: #90dda2;
+  // --ep-color-success-light-7: #bceac7;
+  // --ep-color-success-light-8: #d3f1da;
+  // --ep-color-success-light-9: #e9f8ec;
+  // --ep-color-success-dark-2: #1a9537;
+  // --ep-color-warning: #f2711c;
+  // --ep-color-warning-light-3: #f69c60;
+  // --ep-color-warning-light-5: #f9b88e;
+  // --ep-color-warning-light-7: #fbd4bb;
+  // --ep-color-warning-light-8: #fce3d2;
+  // --ep-color-warning-light-9: #fef1e8;
+  // --ep-color-warning-dark-2: #c25a16;
+  // --ep-color-danger: #db2828;
+  // --ep-color-danger-light-3: #e66969;
+  // --ep-color-danger-light-5: #ed9494;
+  // --ep-color-danger-light-7: #f4bfbf;
+  // --ep-color-danger-light-8: #f8d4d4;
+  // --ep-color-danger-light-9: #fbeaea;
+  // --ep-color-danger-dark-2: #af2020;
+  // --ep-color-error: #db2828;
+  // --ep-color-error-light-3: #e66969;
+  // --ep-color-error-light-5: #ed9494;
+  // --ep-color-error-light-7: #f4bfbf;
+  // --ep-color-error-light-8: #f8d4d4;
+  // --ep-color-error-light-9: #fbeaea;
+  // --ep-color-error-dark-2: #af2020;
+  // --ep-color-info: #42b8dd;
+  // --ep-color-info-light-3: #7bcde7;
+  // --ep-color-info-light-5: #a1dcee;
+  // --ep-color-info-light-7: #c6eaf5;
+  // --ep-color-info-light-8: #d9f1f8;
+  // --ep-color-info-light-9: #ecf8fc;
+  // --ep-color-info-dark-2: #3593b1;
+  // --ep-bg-color: #ffffff;
+  // --ep-bg-color-page: #f2f3f5;
+  // --ep-bg-color-overlay: #ffffff;
+  // --ep-text-color-primary: #303133;
+  // --ep-text-color-regular: #606266;
+  // --ep-text-color-secondary: #909399;
+  // --ep-text-color-placeholder: #a8abb2;
+  // --ep-text-color-disabled: #c0c4cc;
+  // --ep-border-color: #dcdfe6;
+  // --ep-border-color-light: #e4e7ed;
+  // --ep-border-color-lighter: #ebeef5;
+  // --ep-border-color-extra-light: #f2f6fc;
+  // --ep-border-color-dark: #d4d7de;
+  // --ep-border-color-darker: #cdd0d6;
+  // --ep-fill-color: #f0f2f5;
+  // --ep-fill-color-light: #f5f7fa;
+  // --ep-fill-color-lighter: #fafafa;
+  // --ep-fill-color-extra-light: #fafcff;
+  // --ep-fill-color-dark: #ebedf0;
+  // --ep-fill-color-darker: #e6e8eb;
+  // --ep-fill-color-blank: #ffffff;
+  // --ep-box-shadow: 0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08);
+  // --ep-box-shadow-light: 0px 0px 12px rgba(0, 0, 0, 0.12);
+  // --ep-box-shadow-lighter: 0px 0px 6px rgba(0, 0, 0, 0.12);
+  // --ep-box-shadow-dark: 0px 16px 48px 16px rgba(0, 0, 0, 0.08), 0px 12px 32px rgba(0, 0, 0, 0.12), 0px 8px 16px -8px rgba(0, 0, 0, 0.16);
+  // --ep-disabled-bg-color: var(--ep-fill-color-light);
+  // --ep-disabled-text-color: var(--ep-text-color-placeholder);
+  // --ep-disabled-border-color: var(--ep-border-color-light);
+  // --ep-overlay-color: rgba(0, 0, 0, 0.8);
+  // --ep-overlay-color-light: rgba(0, 0, 0, 0.7);
+  // --ep-overlay-color-lighter: rgba(0, 0, 0, 0.5);
+  // --ep-mask-color: rgba(255, 255, 255, 0.9);
+  // --ep-mask-color-extra-light: rgba(255, 255, 255, 0.3);
+  // --ep-border-width: 1px;
+  // --ep-border-style: solid;
+  // --ep-border-color-hover: var(--ep-text-color-disabled);
+  // --ep-border: var(--ep-border-width) var(--ep-border-style) var(--ep-border-color);
+  // --ep-svg-monochrome-grey: var(--ep-border-color);
+}

@@ -1,0 +1,76 @@
+/* 自定义样式，未在此处配置的样式默认使用 element-plus 样式 */
+
+/* 正常模式下自定义样式 */
+
+:root {
+
+    /* app start */
+    --main-bg-color-3: #fff;
+    --main-bg-color-2: #ecedf0;
+    --main-bg-color-1: #fff;
+    --main-border-color: #f6f6f6;
+    --common-space-10: 10px;
+    --common-space-16: 16px;
+    /* app end */
+
+    /* header start */
+    --header-bg-color: #f8f9fa;
+    --header-logo-width: 180px;
+    @media screen and (max-width: 992px) {
+        --header-logo-width: 0px;
+    }
+    /* header end */
+
+    /* aside start */
+    --aside-bg-color: #f8f9fa;
+    --aside-width: 210px;
+    --aside-width-collapsed: 64px;
+    @media screen and (max-width: 1200px) {
+        --aside-width-collapsed: 0px;
+    }
+    /* aside end */
+
+    /* logo start */
+    --logo-height: 50px;
+
+    --logo-padding: 10px;
+
+    --logo-image-width: 28px;
+    /* logo end */
+
+    /* login form start */
+    --login-form-bg-color: #f8f9fa;
+    --login-form-width: 430px;
+    @media screen and (max-width: 768px) {
+        --login-form-width: 340px;
+    }
+    /* login form end */
+
+    /* form start */
+    /* 控制 form 元素上下间隔 */
+    --form-row-top: -10px;
+    --form-col-top: 10px;
+    /* form end */
+}
+
+/* 暗黑模式下自定义样式 */
+html.dark {
+    /* app start */
+    --main-bg-color-3: #121212;
+    --main-bg-color-2: #1d1e24;
+    --main-bg-color-1: #2d2f3d;
+    --main-border-color: #58585b;
+    /* app end */
+
+    /* header start */
+    --header-bg-color: #2d2f3d;
+    /* header end */
+
+    /* aside start */
+    --aside-bg-color: #2d2f3d;
+    /* aside end */
+
+    /* login form start */
+    --login-form-bg-color: #2d2f3d;
+    /* login form end */
+}
