@@ -1,8 +1,8 @@
 # 接口前缀
 VITE_API_BASEPATH=pro
 
-# 打包路径
-VITE_BASE_PATH=/
+# 项目访问路径
+VITE_BASE_PATH=/vue3-admin-template
 
 # 是否删除debugger
 VITE_DROP_DEBUGGER=true
