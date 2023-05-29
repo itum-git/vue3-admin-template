@@ -16,10 +16,10 @@ const config: {
         base: '/api',
 
         // 打包开发环境接口前缀
-        dev: 'http://localhost:9000/api',
+        dev: '/api',
 
         // 打包生产环境接口前缀
-        pro: 'http://localhost:9000/api',
+        pro: '/api',
     },
 
     /**

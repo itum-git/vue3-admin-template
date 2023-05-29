@@ -12,9 +12,7 @@ import { createProdMockServer } from 'vite-plugin-mock/es/createProdMockServer'
 // }
 
 import user from './modules/user'
-import vip from './modules/vip'
-
-const mockMethods = [...user, ...vip]
+const mockMethods = [...user]
 
 export function setupProdMockServer() {
     // const mockMethods = loadMockModules()

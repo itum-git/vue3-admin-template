@@ -95,6 +95,10 @@ export default ({ mode }: ConfigEnv): UserConfig => {
                 // default
                 mockPath: 'mock',
                 localEnabled: isMock,
+                prodEnabled: true, // 为了部署至 github 开启了生产环境 mock
+                injectCode: // 当 prodEnabled 为 true 时，以下代码会被打包进 main.ts 中
+                `import { setupProdMockServer } from '../mock/index.ts';
+                setupProdMockServer();`, 
             }),
             visualizer()
         ],
