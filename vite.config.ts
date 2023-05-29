@@ -106,6 +106,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
             },
         },
         build: {
+            outDir: env.VITE_OUT_DIR,
             rollupOptions: {
                 output: {
                     manualChunks(id: any): string {  

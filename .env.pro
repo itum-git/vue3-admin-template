@@ -14,4 +14,4 @@ VITE_DROP_CONSOLE=true
 VITE_SOURCEMAP=false
 
 # 输出路径
-VITE_OUT_DIR=dist-pro
+VITE_OUT_DIR=dist
